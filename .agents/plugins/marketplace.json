@@ -1,0 +1,10 @@
+{
+  "name": "clutch-skills",
+  "interface": { "displayName": "clutch-skills" },
+  "plugins": [{
+    "name": "pun-pun",
+    "source": { "source": "local", "path": "./plugins/pun-pun" },
+    "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+    "category": "Productivity"
+  }]
+}
