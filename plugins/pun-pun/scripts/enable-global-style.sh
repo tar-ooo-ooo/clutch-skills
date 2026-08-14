@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 if [[ "${1:-}" != "--yes" ]]; then
-  echo "This command adds the pun-pun style block to ~/.codex/AGENTS.md."
-  echo "Review and confirm with the user, then rerun with --yes."
+  echo "此指令會將 pun-pun 風格區塊加入 ~/.codex/AGENTS.md。"
+  echo "確認使用者同意後，請加上 --yes 重新執行。"
   exit 2
 fi
 codex_dir="${CODEX_HOME:-$HOME/.codex}"
@@ -11,7 +11,7 @@ begin="# >>> pun-pun global style >>>"
 mkdir -p "$codex_dir"
 touch "$agents_file"
 if grep -Fqx "$begin" "$agents_file"; then
-  echo "pun-pun global style is already enabled in $agents_file"
+  echo "pun-pun 全域風格已啟用：$agents_file"
   exit 0
 fi
 cat >> "$agents_file" <<'EOF'
@@ -26,4 +26,4 @@ cat >> "$agents_file" <<'EOF'
 - 不在程式碼、指令、檔名、錯誤訊息或結構化資料中玩梗。
 # <<< pun-pun global style <<<
 EOF
-echo "Enabled pun-pun global style in $agents_file"
+echo "已啟用 pun-pun 全域風格：$agents_file"

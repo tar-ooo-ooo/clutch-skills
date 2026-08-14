@@ -7,14 +7,18 @@ plugin="pun-pun"
 codex_dir="${CODEX_HOME:-$HOME/.codex}"
 agents_file="$codex_dir/AGENTS.md"
 begin="# >>> pun-pun global style >>>"
+is_update=false
 
 if ! command -v codex >/dev/null 2>&1; then
-  echo "Codex CLI is required. Install Codex first, then run this command again." >&2
+  echo "找不到 Codex CLI。請先安裝 Codex，再重新執行此指令。" >&2
   exit 1
 fi
 
 if ! codex plugin marketplace list | grep -Fq "Marketplace \`$marketplace\`"; then
   codex plugin marketplace add "$repo" --ref main
+else
+  is_update=true
+  codex plugin marketplace upgrade "$marketplace"
 fi
 
 codex plugin add "$plugin@$marketplace"
@@ -37,4 +41,8 @@ if ! grep -Fqx "$begin" "$agents_file"; then
 EOF
 fi
 
-echo "pun-pun is installed and enabled globally. Start a new Codex session to use it."
+if [[ "$is_update" == true ]]; then
+  echo "pun-pun 已更新成功，並持續套用全域風格。請重新開啟 Codex session 後使用。"
+else
+  echo "pun-pun 已安裝成功並啟用全域風格。請重新開啟 Codex session 後使用。"
+fi
