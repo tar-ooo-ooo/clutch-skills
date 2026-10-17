@@ -21,11 +21,11 @@ description: "「Subagent 的爸爸」：對有工具或 agent 工作的需求�
 
 | Agent | Registry | Runtime 狀態 | 可追溯既有目的 | 本次工作 | 資料來源 | 記錄時間 |
 |---|---|---|---|---|---|---|
-| `<agent 名稱>` | `configured / 未註冊` | `實際狀態 / unknown / unavailable` | `description、metadata 或 unknown` | `本次明確工作或 unassigned` | `registry、live inventory、PM 工作票` | `時間` |
+| `<agent 名稱>` | `configured / 未註冊` | `實際狀態 / unknown / unavailable` | `description、metadata 或 unknown` | `本次明確工作或 unassigned` | `registry、live inventory、協調工作票` | `時間` |
 
 - registry 有、但 runtime inventory 沒有的 agent，狀態一律寫 `unknown（未列入 live inventory）`，不可猜成 `idle`。
 - inventory 有、但 registry 沒有的 agent，Registry 欄寫 `未註冊`。
-- 本次工作只能取自目前使用者需求或目前 PM 工作票；不可沿用舊任務。尚未派工時寫 `unassigned`。
+- 本次工作只能取自目前使用者需求或目前協調工作票；不可沿用舊任務。尚未派工時寫 `unassigned`。
 - inventory 或 registry 無法讀取時如實標為 `unavailable`，不可虛構 agent、狀態或職責。
 
 ## 決策 user flow
