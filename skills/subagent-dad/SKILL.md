@@ -37,7 +37,8 @@ description: "「Subagent 的爸爸」：只在 agent 協作確實有價值時�
 - inventory 有、但 registry 沒有的 agent，Registry 欄寫 `未註冊`。
 - 本次工作只能取自目前使用者需求或目前協調工作票；不可沿用舊任務。尚未派工時寫 `unassigned`。
 - registry 是封閉 roster：未註冊 agent 可以如實顯示，但不得被派工、喚醒或作為替代角色建立。缺少可用的已配置角色時，回報 blocker，不得自行取新名稱建立 child agent。
-- 需要 agent 協作時，100% reuse／喚醒 registry 內既有的 agent identity；即使既有 agent 目前 idle、completed 或尚未有 runtime instance，也只能沿用該 identity，不得建立臨時、替代或 phase-specific agent。
+- 已配置 agent 在 live inventory 顯示休眠／`idle`，或是可接收後續工作的既有 completed thread 時，先用 `followup_task` 對同一個 target 發送完整工作票以喚醒它；不可另建 worker。
+- 需要 agent 協作時，100% reuse／喚醒 registry 內既有的 agent identity；若沒有 live runtime instance，仍只能啟動該已配置 identity，不得建立臨時、替代或 phase-specific agent。
 - inventory 或 registry 無法讀取時如實標為 `unavailable`，不可虛構 agent、狀態或職責。
 
 ## 選擇協作強度
