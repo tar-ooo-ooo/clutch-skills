@@ -1,0 +1,4 @@
+interface:
+  display_name: "API 規格文件"
+  short_description: "依實作撰寫繁體中文 API 文件，涵蓋決策流程、欄位與錯誤回應"
+  default_prompt: "使用 $api-spec，依此專案實作建立或更新 API 規格文件，讓流程圖、請求回應與錯誤條件一致。"
