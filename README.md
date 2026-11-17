@@ -7,3 +7,4 @@
 | [api-spec](skills/api-spec/SKILL.md) | 依實作撰寫繁體中文 API 規格，統一 Mermaid 決策流程、請求回應表格與資料庫讀寫說明。 | `npx skills add tar-ooo-ooo/clutch-skills --skill api-spec -g -a codex -y` |
 | [issue-brief](skills/issue-brief/SKILL.md) | 依指定或確認的分類撰寫精簡工單留言。 | `npx skills add tar-ooo-ooo/clutch-skills --skill issue-brief -g -a codex -y` |
 | [commit-convention](skills/commit-convention/SKILL.md) | 依變更內容產生類型、模組與摘要俱全的 commit 訊息。 | `npx skills add tar-ooo-ooo/clutch-skills --skill commit-convention -g -a codex -y` |
+| [mr-helper](skills/mr-helper/SKILL.md) | 確認工單並撰寫條列式 MR／PR 描述。 | `npx skills add tar-ooo-ooo/clutch-skills --skill mr-helper -g -a codex -y` |
